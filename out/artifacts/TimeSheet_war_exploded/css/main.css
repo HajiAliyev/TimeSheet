@@ -1,0 +1,35 @@
+body {
+    background-color: cyan;
+}
+/*
+
+table {
+    align-content: center;
+    width:100% ;
+}
+
+!*#studentTableId {
+    color: red;
+}
+
+#teacherTableId {
+    background-color: darkorange;
+}*!
+
+.myclass {
+    color: green;
+    background: #ff7545;
+}
+
+*/
+
+.lblDesign {
+    width: 150px;
+    display: inline-block;
+    margin-bottom: 5px ;
+}
+
+.monthComboBox {
+    height: 30px;
+    width: 140px;
+}
