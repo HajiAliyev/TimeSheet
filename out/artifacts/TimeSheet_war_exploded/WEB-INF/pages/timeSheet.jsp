@@ -12,7 +12,42 @@
     $(function () {
 
 
+        var monthlyWorkingDays = 0;
+        var monthlyWorkingHours = 0;
+        var sickLeave = 0;
+        var vacation = 0;
+        var overTime = 0;
+        var holidayAndNonWorkday = 0;
+        var monthlyWorkingHours = 0;
+        $('.items').each(function (i , v){
+            var status = $(v).find('.selectPicker :selected').val();
+            var hour = $(v).find('.hourWork').val();
 
+            if(status == 'R' || status == 'R/' ){
+                monthlyWorkingDays ++;
+            }
+            if(status == 'R' || status == 'R/' ){
+                monthlyWorkingHours += parseInt(hour) ;
+            }
+            if(status == 'S'){
+                sickLeave ++;
+            }
+            if(status == 'V'){
+                vacation ++;
+            }
+            if(status == 'O'){
+                overTime += parseInt(hour);
+            }
+            if(status == 'H' || status == 'W' ){
+                holidayAndNonWorkday++;
+            }
+        });
+        $('#workingDaysReportId').val(monthlyWorkingDays);
+        $('#workingHoursReportId').val(monthlyWorkingHours);
+        $('#sickLiveReportId').val(sickLeave);
+        $('#vacationReportId').val(vacation);
+        $('#overTimeReportId').val(overTime);
+        $('#holidaysAndNonWorkingDaysId').val(holidayAndNonWorkday);
 
         $('#timeSheetTableİd').dataTable({
             paging: true,
@@ -80,9 +115,9 @@
 
 
 <div>
-    <div style="display: inline-block">
+    <div style="display: inline-block" >
     <label for="monthesComboId">Choose month:  </label>
-        <select id="monthesComboId" class="monthComboBox">
+        <select id="monthesComboId" change="" class="monthComboBox">
                 <option value="0" selected disabled >Choose Month: </option>
                 <c:forEach items="${monthesList}" var="ml">
                 <option id="${m.id}" value="${ml.id}"> ${ml.id}.  ${ml.name}</option>
@@ -140,8 +175,8 @@
                                 <option <c:if test="${tsl.status == 'O'}"> selected </c:if> value="O">Overtime</option>
                             </select>
                         <td class="description" contenteditable="true" >${tsl.description}</td>
-                        <td class="hourWork" >
-                        <input id="inputHour_${Count.count}" disabled="true" type="text" <%--disabled="disabled"--%> value="${tsl.hour}" >
+                        <td>
+                        <input  class="hourWork"  id="inputHour_${Count.count}" disabled="true" type="text" <%--disabled="disabled"--%> value="${tsl.hour}" >
                         </td>
 
 
@@ -205,7 +240,47 @@
         </table>
 
         <div id="submitBtnId">
-            <input type="button" value="SUBMIT">
+            <input type="button" value="SUBMIT" >
         </div>
+        <br>
+        <br>
+
+        <table>
+            <tr>
+                <td><label float="left"  for="workingDaysReportId">Monthly Working Days (Regular and Short days):</label></td>
+                <td><input float="right" id="workingDaysReportId" name="workingDaysReport" type="text" readonly></td>
+            </tr>
+            <tr>
+                <td><label style="text-align: left" for="workingHoursReportId">Monthly Working Hours (Regular and Short days):</label></td>
+                <td><input float="right" id="workingHoursReportId" name="workingHoursReport" type="text" readonly></td>
+            </tr>
+            <tr>
+                <td><label style="text-align: left" for="sickLiveReportId">Sick Leave: </label></td>
+                <td><input float="right" id="sickLiveReportId" name="sickLiveReport" type="text" readonly></td>
+            </tr>
+            <tr>
+                <td><label style="text-align: left" for="vacationReportId">Vacation: </label></td>
+                <td><input float="right" id="vacationReportId" name="vacationReport" type="text" readonly></td>
+            </tr>
+            <tr>
+                <td>            <label style="text-align: left" for="overTimeReportId">Over Time (Hours): </label>
+                </td>
+                <td>            <input float="right" id="overTimeReportId" name="overTimeReport" type="overTimeReport" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>            <label style="text-align: left" for="holidaysAndNonWorkingDaysId">Holidays and Non-working days (No Vacation):</label>
+                </td>
+                <td>            <input float="right" id="holidaysAndNonWorkingDaysId" name="holidaysAndNonWorkingDays" type="text" readonly>
+                </td>
+            </tr>
+            <%--<tr>--%>
+                <%--<td>            <label style="text-align: left" for="monthlyWorkHoursId">Monthly Working Hours: </label>--%>
+                <%--</td>--%>
+                <%--<td>            <input float="right" id="monthlyWorkHoursId" name="holidaysAndNonWorkingDays" type="text" readonly>--%>
+                <%--</td>--%>
+            <%--</tr>--%>
+        </table>
+
     </div>
     </div>

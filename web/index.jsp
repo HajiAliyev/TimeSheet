@@ -9,7 +9,7 @@ To change this template use File | Settings | File Templates.
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>A TIMESHEET</title>
+    <title>Time Sheet</title>
 <%--/JS lerin hansinin harda verilmesinin ferqi boyukdur --%>
 
     <script type="text/javascript" src="js/jquery/jquery-3.4.1.js"></script>
@@ -62,9 +62,9 @@ To change this template use File | Settings | File Templates.
 
   <div class="wrapper">
     <header  style="outline:1px solid; min-height: 50px;text-align: center">TimeSheet
-        <div style="float: right";>
+        <div class="welcomeAndLogOut" style="float: right";>
             Welcome, ${login.member.name} ${login.member.surname} &nbsp;
-            <a href="logout.jsp"  class="btn btn-info btn-lg" style="float: right; font-size: 14px">Log Out </a>
+            <a href="logout.jsp" id="logOutBtnId"  class="btn btn-info btn-lg" style="float: right; font-size: 14px">Log Out </a>
         </div>
 
     </header>
@@ -72,7 +72,7 @@ To change this template use File | Settings | File Templates.
       <div class="row" style=" min-height: 500px;">
         <div class="col-md-4" >
           <%--EAST--%>
-          <input type="button" value="Members" id="memberBtnId" class="btnDesign"> <br>
+          <input type="button" value="Members"  id="memberBtnId" class="btnDesign" > <br>
           <div id="memberDataId" style="display: none">
           </div>
         </div>

@@ -73,7 +73,7 @@ public class ControllerServlet extends HttpServlet {
             }
             else if (action.equalsIgnoreCase(Constants.GET_MEMBER_BY_ID)) {
                 String member_Id = request.getParameter("memberId");
-                System.out.println("member Id=" + member_Id);
+//                System.out.println("member Id=" + member_Id);
                 if (member_Id != null) {
                     long memberId = Long.parseLong(member_Id);
                     Member member = service.getMemberById(memberId);
@@ -83,12 +83,12 @@ public class ControllerServlet extends HttpServlet {
                 }
             } else if (action.equalsIgnoreCase(Constants.GET_TEAM_LIST_BY_TEAMLEADER_ID)) {
                 String teamLeader_Id = request.getParameter("teamLeaderId");
-                System.out.println("TEAMLIST member Id=" + teamLeader_Id);
+//                System.out.println("TEAMLIST member Id=" + teamLeader_Id);
                     long teamLeaderId = Long.parseLong(teamLeader_Id);
                     List<Member> teamList = service.getMemberListByTeamLeaderId(teamLeaderId);
                     request.setAttribute("teamList", teamList);
                     addressForJspPage = "/WEB-INF/pages/memberList.jsp";
-                    System.out.println("action getTeamListByTeamLeaderId = "+teamList);
+//                    System.out.println("action getTeamListByTeamLeaderId = "+teamList);
             } else if (action.equalsIgnoreCase(Constants.GET_TIMESHEET_LIST)) {
                 String member_Id = request.getParameter("rowId");
                 String month_Id = request.getParameter("monthId");
@@ -124,9 +124,9 @@ public class ControllerServlet extends HttpServlet {
 
                     addressForJspPage = "/WEB-INF/pages/timeSheet.jsp";
 
-                    System.out.println("Servlet timesheet = " + timeSheetList);
-                    System.out.println("Servlet memberList = " + memberList);
-                    System.out.println("Servlet monthesList  = " + monthesList);
+//                    System.out.println("Servlet timesheet = " + timeSheetList);
+//                    System.out.println("Servlet memberList = " + memberList);
+//                    System.out.println("Servlet monthesList  = " + monthesList);
 
 //                    System.out.println("contasdfgf=" + timeSheetList);
                 } else
@@ -148,11 +148,11 @@ public class ControllerServlet extends HttpServlet {
                     String a = Integer.toString(i);
                     JSONObject jsonObject = json.getJSONObject(a);
 
-                    String monthId = jsonObject.getString("monthId");
-                    String day = jsonObject.getString("day");
+                    Long monthId = jsonObject.getLong("monthId");
+                    Long day = jsonObject.getLong("day");
                     String status = jsonObject.getString("status");
                     String description = jsonObject.getString("description");
-                    String hour = jsonObject.getString("hour");
+                    Integer hour = jsonObject.getInt("hour");
 
                     TimeSheet timeSheet = new TimeSheet();
 
@@ -161,13 +161,13 @@ public class ControllerServlet extends HttpServlet {
                     timeSheet.setMember(member);
 
                     Monthes monthes = new Monthes();
-                    monthes.setId(Long.parseLong(monthId));
+                    monthes.setId(monthId);
 
                     timeSheet.setMonthes(monthes);
-                    timeSheet.setDay(Long.parseLong(day));
+                    timeSheet.setDay(day);
                     timeSheet.setStatus(status);
                     timeSheet.setDescription(description);
-                    timeSheet.setHour(Integer.parseInt(hour));
+                    timeSheet.setHour(hour);
                     System.out.println(timeSheet);
                     boolean isUpdated = service.addTimeSheet(timeSheet);
                     if (isUpdated) {

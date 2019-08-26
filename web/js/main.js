@@ -3,7 +3,9 @@ var globMonthId = '';
 var globFullName = '';
 $(function () {
     $('#monthesComboId').change(function () {
-        alert('isledi');
+
+
+        // alert('isledi');
 
         // globMonthId = $('#monthesComboId').val();
         // getTimeSheetList(globMemberId,globFullName,globMonthId);
@@ -33,9 +35,11 @@ $(function () {
             globMemberId = rowId;
             $('#timeSheetDataId').show();
             var fullname = $(this).find('.name').text();
-            fullname = globFullName;
+            globFullName = fullname;
             //alert(fullname);
             getTimeSheetList(rowId, fullname, monthId);
+            // getReport();
+
             //     $('#monthesComboId').on('change',function () {
             //         alert('isledi');
             //
@@ -109,7 +113,7 @@ function getTeamListByTeamLeaderId(teamLeaderId) {
 
 }
 
-function getTimeSheetList(rowId, fullname, monthId) {
+function getTimeSheetList(rowId, globFullname, monthId) {
 
     if (rowId != null && monthId != null) {
         var monthId = globMonthId;
@@ -126,7 +130,7 @@ function getTimeSheetList(rowId, fullname, monthId) {
             success: function (data) {
                 $('#timeSheetDataId').html(data);
                 //alert(rowId);
-                $('.fullname').text(fullname);
+                $('.fullname').text(globFullName);
             },
             error: function () {
                 alert('Error');
@@ -146,7 +150,7 @@ function addTimesheet(globMemberId)
 {
     var memberId = globMemberId;
     var data = {};
-alert(memberId);
+    // alert(memberId);
 
 
     $('.items').each(function (i , v){
@@ -154,7 +158,8 @@ alert(memberId);
         var day = $(v).find('.day').text();
         var status = $(v).find('.selectPicker :selected').val();
         var description = $(v).find('.description').text();
-        var hour = $(v).find('.hourWork').text();
+        var hour = $(v).find('.hourWork').val();
+
         data[i]= {monthId:monthId, day:day, status:status, description:description, hour:hour}
         if(monthId == 0 || day == 0 || status.trim() =="" ) {
             alert('Data is empty!');
@@ -199,4 +204,43 @@ function getMonthesCombo(){
             $('#statusComboId').html(data);
         }
     });
+}
+
+function  getReport(){
+    var monthlyWorkingDays = 0;
+    var monthlyWorkingHours = 0;
+    var sickLeave = 0;
+    var vacation = 0;
+    var overTime = 0;
+    var holidayAndNonWorkday = 0;
+    var monthlyWorkingHours = 0;
+    $('.items').each(function (i , v){
+        var status = $(v).find('.selectPicker :selected').val();
+        var hour = $(v).find('.hourWork').val();
+
+        if(status == 'R' || status == 'R/' ){
+            monthlyWorkingDays ++;
+        }
+        if(status == 'R' || status == 'R/' ){
+            monthlyWorkingHours += hour ;
+        }
+        if(status == 'S'){
+            monthlyWorkingDays ++;
+        }
+        if(status == 'V'){
+            vacation ++;
+        }
+        if(status == 'O'){
+            overTime += hour;
+        }
+        if(status == 'H' || status == 'W' ){
+            holidayAndNonWorkday++;
+        }
+    });
+    $('#workingDaysReportId').text(monthlyWorkingDays);
+    $('#workingHoursReportId').text(monthlyWorkingHours);
+    $('#sickLiveReportId').text(sickLeave);
+    $('#vacationReportId').text(vacation);
+    $('#overTimeReportId').text(overTime);
+    $('#holidaysAndNonWorkingDaysId').text(holidayAndNonWorkday);
 }

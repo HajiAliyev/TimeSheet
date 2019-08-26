@@ -208,6 +208,8 @@ public class DaoImpl implements Dao{
                 ps.setString(1, timeSheet.getStatus());
                 ps.setString(2, timeSheet.getDescription());
                 String caseKey = timeSheet.getStatus();
+                System.out.println("Dao da olan case - in statusu: "+caseKey);
+//                System.out.print(timeSheet.getStatus());
                 switch(caseKey) {
                     case "R" : //Regular day
                         ps.setInt(3,8);
@@ -218,8 +220,8 @@ public class DaoImpl implements Dao{
                     case "O" : //Overtime
                         ps.setInt(3,timeSheet.getHour());
                         break;
-//                        default : // Optional
-//                            // Statements
+                    default :
+                        ps.setInt(3,0);
                 }
                 ps.setLong(4, timeSheet.getMember().getId());
                 ps.setLong(5, timeSheet.getMonthes().getId());
@@ -227,7 +229,7 @@ public class DaoImpl implements Dao{
 
                 ps.execute();
                 result = true;
-                System.out.println("SUCCESS DAO + timeSheet" + timeSheet);
+//                System.out.println("SUCCESS DAO + timeSheet" + timeSheet);
             } else {
                 System.out.println("Connection is  null!");
             }
