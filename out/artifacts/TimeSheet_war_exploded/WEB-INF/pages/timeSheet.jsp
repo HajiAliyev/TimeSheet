@@ -10,8 +10,6 @@
 
 <script>
     $(function () {
-
-
         var monthlyWorkingDays = 0;
         var monthlyWorkingHours = 0;
         var sickLeave = 0;
@@ -26,7 +24,7 @@
             if(status == 'R' || status == 'R/' ){
                 monthlyWorkingDays ++;
             }
-            if(status == 'R' || status == 'R/' ){
+            if(status == 'R' || status == 'R/'){
                 monthlyWorkingHours += parseInt(hour) ;
             }
             if(status == 'S'){
@@ -84,7 +82,7 @@
 
 
         $('#monthesComboId').change(function () {
-            alert('isledi');
+            alert('Timesheet is succesfully updated');
 
             globMonthId = $('#monthesComboId').val();
             getTimeSheetList(globMemberId,globFullName,globMonthId);
@@ -120,7 +118,7 @@
         <select id="monthesComboId" change="" class="monthComboBox">
                 <option value="0" selected disabled >Choose Month: </option>
                 <c:forEach items="${monthesList}" var="ml">
-                <option id="${m.id}" value="${ml.id}"> ${ml.id}.  ${ml.name}</option>
+                <option id="${m.id}" value="${ml.id}">${ml.name}</option>
                 </c:forEach>
         </select>
 
@@ -155,14 +153,13 @@
                         <td class="day" value="${tsl.day}">${tsl.day}</td>
                         <td class="status" value="">
                             <select id="statusComboId_${Count.count}" class="selectPicker"
-                                    onchange="if ((this.value) === 'O')
-                                    {
-                                    alert(this.value);
-                                    $('#inputHour_${Count.count}').attr('disabled', false)
+                                    onchange="if ((this.value) === 'O'){
+                                        alert(this.value);
+                                        $('#inputHour_${Count.count}').attr('disabled', false)
+                                        $('#inputHour_${Count.count}').css('background-color','wheat');
                                     }
-                                    else
-                                    {
-                                    $('#inputHour_${Count.count}').attr('disabled', true)
+                                    else{
+                                        $('#inputHour_${Count.count}').attr('disabled', true)
                                     }"> <%--select baglanir--%>
 
                                 <option value="NF" selected disabled >Not Fill</option>
@@ -239,47 +236,38 @@
             </tfoot>
         </table>
 
-        <div id="submitBtnId">
-            <input type="button" value="SUBMIT" >
+        <div  style="width: 100%;">
+            <input type="button" id="submitBtnId"  value="SUBMIT" style="width: 100%;" >
         </div>
         <br>
         <br>
 
-        <table>
+        <table id="reportTableId">
             <tr>
                 <td><label float="left"  for="workingDaysReportId">Monthly Working Days (Regular and Short days):</label></td>
-                <td><input float="right" id="workingDaysReportId" name="workingDaysReport" type="text" readonly></td>
+                <td><input float="right" class="reportLblDesign" id="workingDaysReportId" name="workingDaysReport" type="text" readonly></td>
             </tr>
             <tr>
                 <td><label style="text-align: left" for="workingHoursReportId">Monthly Working Hours (Regular and Short days):</label></td>
-                <td><input float="right" id="workingHoursReportId" name="workingHoursReport" type="text" readonly></td>
+                <td><input float="right" class="reportLblDesign"  id="workingHoursReportId" name="workingHoursReport" type="text" readonly></td>
             </tr>
             <tr>
                 <td><label style="text-align: left" for="sickLiveReportId">Sick Leave: </label></td>
-                <td><input float="right" id="sickLiveReportId" name="sickLiveReport" type="text" readonly></td>
+                <td><input float="right" class="reportLblDesign"  id="sickLiveReportId" name="sickLiveReport" type="text" readonly></td>
             </tr>
             <tr>
                 <td><label style="text-align: left" for="vacationReportId">Vacation: </label></td>
-                <td><input float="right" id="vacationReportId" name="vacationReport" type="text" readonly></td>
+                <td><input float="right" class="reportLblDesign"  id="vacationReportId" name="vacationReport" type="text" readonly></td>
             </tr>
             <tr>
-                <td>            <label style="text-align: left" for="overTimeReportId">Over Time (Hours): </label>
-                </td>
-                <td>            <input float="right" id="overTimeReportId" name="overTimeReport" type="overTimeReport" readonly>
-                </td>
+                <td><label style="text-align: left" for="overTimeReportId">Over Time (Hours): </label></td>
+                <td><input float="right"  class="reportLblDesign"  id="overTimeReportId" name="overTimeReport" type="overTimeReport" readonly></td>
             </tr>
             <tr>
-                <td>            <label style="text-align: left" for="holidaysAndNonWorkingDaysId">Holidays and Non-working days (No Vacation):</label>
-                </td>
-                <td>            <input float="right" id="holidaysAndNonWorkingDaysId" name="holidaysAndNonWorkingDays" type="text" readonly>
-                </td>
+                <td><label style="text-align: left" for="holidaysAndNonWorkingDaysId">Holidays and Non-working days (No Vacation):</label></td>
+                <td><input float="right"  class="reportLblDesign" id="holidaysAndNonWorkingDaysId" name="holidaysAndNonWorkingDays" type="text" readonly></td>
             </tr>
-            <%--<tr>--%>
-                <%--<td>            <label style="text-align: left" for="monthlyWorkHoursId">Monthly Working Hours: </label>--%>
-                <%--</td>--%>
-                <%--<td>            <input float="right" id="monthlyWorkHoursId" name="holidaysAndNonWorkingDays" type="text" readonly>--%>
-                <%--</td>--%>
-            <%--</tr>--%>
+
         </table>
 
     </div>

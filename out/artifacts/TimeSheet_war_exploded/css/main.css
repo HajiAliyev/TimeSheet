@@ -1,5 +1,6 @@
 body {
-    background-color: cyan;
+    /*background-color: cyan;*/
+    /*background: #59b8bb;*/
 }
 /*
 
@@ -38,21 +39,43 @@ table {
     width: 100%;
     height: 40px;
     margin-top: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #979797;
+    border-radius: 8px;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 #memberBtnId{
     margin-top: 20px;
     margin-bottom: 20px;
-    color: #333 !important;
     border: 1px solid #979797;
-    background-color: white;
+    border-radius: 8px;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 
-/*.welcomeAndLogOut{*/
-    /*margin-top: 5px;*/
-    /*margin-bottom: 10px;*/
-    /*margin-left: 20px;*/
-    /*margin-right: 20px;*/
-/*}*/
 
+.welcomeAndLogOut{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+#logOutBtnId{
+    background: gray;
+
+}
+.reportLblDesign{
+    background-color: rgba(122, 186, 255, 0.28);
+}
+
+#reportTableId{
+}

@@ -131,6 +131,7 @@ function getTimeSheetList(rowId, globFullname, monthId) {
                 $('#timeSheetDataId').html(data);
                 //alert(rowId);
                 $('.fullname').text(globFullName);
+                $('#monthesComboId').val(globMonthId);
             },
             error: function () {
                 alert('Error');

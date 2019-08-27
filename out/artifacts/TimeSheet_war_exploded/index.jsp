@@ -9,7 +9,7 @@ To change this template use File | Settings | File Templates.
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>Time Sheet</title>
+      <title style="margin-right: 500px;">Time Sheet</title>
 <%--/JS lerin hansinin harda verilmesinin ferqi boyukdur --%>
 
     <script type="text/javascript" src="js/jquery/jquery-3.4.1.js"></script>
@@ -61,23 +61,23 @@ To change this template use File | Settings | File Templates.
   %>
 
   <div class="wrapper">
-    <header  style="outline:1px solid; min-height: 50px;text-align: center">TimeSheet
+      <header  style="outline:1px solid; min-height: 50px;text-align: center"><b style="font-size: xx-large">TimeSheet</b>
         <div class="welcomeAndLogOut" style="float: right";>
-            Welcome, ${login.member.name} ${login.member.surname} &nbsp;
-            <a href="logout.jsp" id="logOutBtnId"  class="btn btn-info btn-lg" style="float: right; font-size: 14px">Log Out </a>
+            <b style="font-size: large;"> Welcome, ${login.member.name} ${login.member.surname}</b> &nbsp;
+            <a href="logout.jsp" id="logOutBtnId"  class="btn btn-info btn-lg" style="float: right; font-size: 14px"><b>Log Out</b></a>
         </div>
 
     </header>
-    <div class="container">
+    <div class="container" id="menuDivId">
       <div class="row" style=" min-height: 500px;">
         <div class="col-md-4" >
           <%--EAST--%>
-          <input type="button" value="Members"  id="memberBtnId" class="btnDesign" > <br>
+            <strong><input type="button"   value="Members"  id="memberBtnId" class="btnDesign" ></strong> <br>
           <div id="memberDataId" style="display: none">
           </div>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-8" id="centerDivId">
 
           <%--CENTER--%>
 
@@ -101,7 +101,7 @@ To change this template use File | Settings | File Templates.
 
       </div>
     </div>
-    <div  style="text-align: center">Copyright Haci</div>
+    <div  id="footerDivId" style="text-align: center;"><i>Copyright &#169; Haci Aliyev</i></div>
   </div>
   </body>
 
