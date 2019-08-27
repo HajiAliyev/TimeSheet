@@ -22,14 +22,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="103" column="53" selection-start-line="103" selection-start-column="53" selection-end-line="103" selection-end-column="53" />
+            <state relative-caret-position="102">
+              <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
               <folding>
                 <element signature="n#style#0;n#title#0;n#head#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#b#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#b#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#2620#2626#0#HTML" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="85" column="23" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
+              <folding>
+                <marker date="1565763877046" expanded="true" signature="3994:4019" ph="..." />
               </folding>
             </state>
           </provider>
@@ -91,7 +103,6 @@
       <find>==</find>
       <find>submit</find>
       <find>members</find>
-      <find>body</find>
       <find>log out</find>
       <find>member</find>
       <find>input</find>
@@ -99,8 +110,9 @@
       <find>welcome</find>
       <find>alert</find>
       <find>color</find>
-      <find>haci</find>
       <find>monthcom</find>
+      <find>haci</find>
+      <find>body</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,7 +176,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="780" />
@@ -231,6 +243,12 @@
               <item name="TimeSheet" type="b2602c69:ProjectViewProjectNode" />
               <item name="TimeSheet" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TimeSheet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TimeSheet" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -263,17 +281,17 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web" />
-      <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web\Login_v18" />
-      <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web\css\login" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web\images" />
       <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\lib" />
       <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web\Login-template\css" />
       <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web" />
       <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web\js" />
-      <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web" />
+      <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web\Login_v18" />
+      <recent name="C:\Users\TOSHIBA\IdeaProjects\TimeSheet\web\css\login" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -396,12 +414,12 @@
       <workItem from="1566490524394" duration="5453000" />
       <workItem from="1566539514553" duration="20031000" />
       <workItem from="1566795729244" duration="24180000" />
-      <workItem from="1566882176130" duration="8741000" />
+      <workItem from="1566882176130" duration="10951000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280964000" />
+    <option name="totallyTimeSpent" value="283174000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -413,10 +431,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.2881997" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.2881997" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24962178" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -426,7 +443,7 @@
       <window_info id="Web" order="7" side_tool="true" weight="0.15885022" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.17317487" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.17317487" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.17317487" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27164686" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -630,16 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="51" column="68" selection-start-line="51" selection-start-column="68" selection-end-line="51" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="63" column="41" lean-forward="true" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-          <folding>
-            <marker date="1565763877046" expanded="true" signature="3994:4019" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -933,10 +940,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="85" column="23" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
+          <folding>
+            <marker date="1565763877046" expanded="true" signature="3994:4019" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="103" column="53" selection-start-line="103" selection-start-column="53" selection-end-line="103" selection-end-column="53" />
+        <state relative-caret-position="102">
+          <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
           <folding>
             <element signature="n#style#0;n#title#0;n#head#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#b#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
